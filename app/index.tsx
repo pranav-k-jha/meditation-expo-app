@@ -5,8 +5,10 @@ import beachImage from "@/assets/meditation-images/beach.webp";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import CustomButton from "@/components/CustomButton";
+import { useRouter } from "expo-router";
 
 const App = () => {
+  const router = useRouter();
   return (
     <View className="flex-1">
       <ImageBackground
@@ -24,13 +26,13 @@ const App = () => {
                 Simple Meditation
               </Text>
               <Text className="text-center text-white text-2xl mt-3">
-                Simplifying Meditation for Everyone out there
+                Simplifying Meditation for Everyone
               </Text>
             </View>
 
             <View>
               <CustomButton
-                onPress={() => console.log("tap")}
+                onPress={() => router.push("/nature-meditate")}
                 title="Get Started"
               />
             </View>
